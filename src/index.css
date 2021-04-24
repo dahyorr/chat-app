@@ -1,13 +1,276 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.flex {
+  display: flex;
 }
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: #F8F4E3;
+  color: #0f191d;
+}
+
+.container {
+  max-width: 1280px;
+  padding: 0 1.5rem;
+  margin: auto;
+}
+
+.Nav {
+  padding: 0.8rem 0;
+  background: #23b5d3;
+}
+.Nav .container {
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+}
+.Nav a {
+  color: #0f191d;
+  text-decoration: none;
+  font-size: 1.3srem;
+}
+.Nav .logo {
+  font-family: "Lobster", cursive;
+}
+.Nav ul {
+  display: flex;
+  font-size: 0.9rem;
+}
+.Nav ul li {
+  list-style: none;
+  padding: 0.5rem 1rem;
+  background-color: #F8F4E3;
+  margin-left: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.Nav ul li:hover {
+  background-color: #ece9d8;
+  transition: all 0.5s;
+}
+
+.Login {
+  width: 500px;
+  height: 500px;
+  background-color: #ebe7d6;
+  margin: auto;
+  margin-top: 7rem;
+  border-radius: 20px;
+  padding: 2rem;
+}
+.Login .google {
+  border: none;
+  background: none;
+  margin: 1.5rem auto;
+  display: block;
+  cursor: pointer;
+}
+.Login > p {
+  text-align: center;
+}
+.Login div {
+  margin: 1.5rem 0;
+}
+.Login div .info {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+.Login div .title {
+  text-align: center;
+}
+.Login form {
+  margin-top: 1.5rem;
+}
+.Login form .error {
+  color: #db2828;
+  text-align: center;
+}
+.Login form input {
+  width: 300px;
+  height: 40px;
+  display: block;
+  margin: 2rem auto;
+  border-radius: 10px;
+  padding: 0 0.5rem;
+  border: 1px solid grey;
+  outline: none;
+  color: #0f191d;
+  font-size: 1rem;
+}
+.Login form input:focus {
+  border: 2px solid #23b5d3;
+}
+.Login form input[type=email] {
+  margin-top: 10px;
+}
+.Login form button {
+  display: block;
+  margin: 3rem auto 1rem auto;
+  padding: 0.8rem 4rem;
+  background: #23b5d3;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid grey;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.Login form button:hover {
+  transform: scale(1.1);
+  background-color: #24a9c4;
+  transition: all 0.5s;
+}
+
+.Chat .chatbox {
+  background-color: #ece9d8;
+  height: calc(100vh - 65.6px);
+  padding: 0;
+  flex-direction: column;
+}
+
+.ChatInput {
+  height: 10%;
+  width: 100%;
+  background-color: #f3f1ea;
+  padding: 1rem 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+.ChatInput textarea {
+  width: 90%;
+  height: 65px;
+  border-radius: 10px 0 0 10px;
+  border: 1px solid #23b5d3;
+  outline: none;
+  font-size: 1rem;
+  resize: none;
+  padding: 0.5rem 1rem;
+}
+.ChatInput textarea:focus {
+  border-width: 3px;
+}
+.ChatInput div {
+  height: 65px;
+  width: 60px;
+  background-color: #23b5d3;
+  border-radius: 0 10px 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.ChatInput div:hover {
+  background-color: #24a9c4;
+  transition: all 0.5s;
+}
+.ChatInput div i {
+  color: #F8F4E3;
+}
+
+.ListMessages {
+  height: 90%;
+  width: 100%;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  flex-direction: column-reverse;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+.ListMessages::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px #F8F4E3;
+  background-color: #ece9d8;
+}
+.ListMessages::-webkit-scrollbar {
+  width: 8px;
+  background-color: #ece9d8;
+}
+.ListMessages::-webkit-scrollbar-thumb {
+  background-color: #23b5d3;
+  border-radius: 15px;
+}
+.ListMessages div {
+  width: 100%;
+}
+.ListMessages div .message {
+  width: 45%;
+  padding: 0.5rem 1rem;
+  float: right;
+  margin-top: 0.8rem;
+  word-wrap: break-word;
+  font-size: 1rem;
+}
+.ListMessages div .message .user {
+  margin: 0.2rem 0;
+  font-size: 0.85rem;
+  font-weight: 900;
+}
+.ListMessages div .message .timestamp {
+  text-align: right;
+  margin: 0.2rem 0;
+  font-size: 0.75rem;
+}
+.ListMessages div .right {
+  background-color: #24a9c4;
+}
+.ListMessages div .right .user {
+  color: #4d4949;
+}
+.ListMessages div .left {
+  background-color: #fff;
+  color: #0f191d;
+}
+.ListMessages div .left .user {
+  color: #696666;
+}
+
+.Home .jumbotron {
+  height: 500px;
+  width: 100%;
+  background-color: #dad6c5;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #0f191d;
+  margin-top: 5rem;
+  border-radius: 15px;
+}
+.Home .jumbotron div h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+.Home .jumbotron div a {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background-color: #F8F4E3;
+  margin-left: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #0f191d;
+}
+.Home .jumbotron div a:hover {
+  background-color: #ece9d8;
+  transition: all 0.5s;
+}
+
+.Footer {
+  width: 100%;
+  height: 40px;
+  background-color: #23b5d3;
+  color: #F8F4E3;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  bottom: 0;
+}
+
+@media (max-width: 568px) {
+  .user-email {
+    display: none;
+  }
+}/*# sourceMappingURL=index.css.map */

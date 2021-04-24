@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+$black-color: #0f191d;
+$blue-color: #23b5d3;
+$blue-dark-color: #24a9c4;
+$eggshell-color: #F8F4E3;
+$eggshell-dark-color: #ece9d8;
+$lightpink-color: #F9E9EC;
+// $purple-accent: #5D5D81;
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.flex{display: flex;}
+body{
+    font-family: 'Roboto', sans-serif;
+    background: $eggshell-color;
+    color: $black-color;
+    
+}
+.container{
+    max-width: 1280px;
+    padding: 0 1.5rem;
+    margin: auto;
+}
+
+// Nav/
+.Nav{
+    padding: 0.8rem 0;
+    background: $blue-color;
+    // height: 40px;
+    .container{
+        justify-content: space-between;
+        align-items: center;
+        height: 40px;
+    }
+    a{
+                color: $black-color;
+                text-decoration: none;
+                font-size: 1.3srem;
+                
+            }
+    .logo{
+        font-family: 'Lobster', cursive;
+    }
+    ul{
+        display: flex;
+        font-size: 0.9rem;
+        li{
+            list-style: none;
+            padding: 0.5rem 1rem;
+            background-color: $eggshell-color;
+            margin-left: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+
+            &:hover{
+                    background-color: $eggshell-dark-color;
+                    transition: all 0.5s;
+                }
+        }
+    }
+}
+
+// Login
+.Login{
+    width: 500px;
+    height: 500px;
+    background-color: #ebe7d6;
+    margin: auto;
+    margin-top: 7rem;
+    border-radius: 20px;
+    padding: 2rem;
+    .google{
+        border: none;
+        background: none;
+        margin: 1.5rem auto;
+        display: block;
+        cursor: pointer;
+    }
+    > p{text-align: center;}
+    div{
+        margin: 1.5rem 0;
+        .info{
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+        .title{
+            text-align: center;
+        }
+    }
+    form{
+        margin-top: 1.5rem;
+        .error{
+            color: rgb(219, 40, 40);
+            text-align: center;
+        }
+        input{
+            width: 300px;
+            height: 40px;
+            display: block;
+            margin: 2rem auto;
+            border-radius: 10px;
+            padding: 0 0.5rem;
+            border: 1px solid grey;
+            outline: none;
+            color: $black-color;
+            font-size: 1rem;
+            &:focus{
+                border: 2px solid $blue-color;
+            }
+            &[type='email']{
+                margin-top: 10px;
+            }
+            
+        }
+        button{
+                display: block;
+                margin: 3rem auto 1rem auto;
+                padding: 0.8rem 4rem;
+                background: $blue-color;
+                border-radius: 10px;
+                outline: none;
+                border: 1px solid grey;
+                cursor: pointer;
+                font-size: 1rem;
+                &:hover{
+                    transform: scale(1.1);
+                    background-color: $blue-dark-color;
+                    transition: all 0.5s;
+                }
+            }
+    }
+}
+
+// Chat
+.Chat{
+    .chatbox{
+        background-color: $eggshell-dark-color;
+        height: calc(100vh - 65.6px);
+        padding: 0;
+        flex-direction: column;
+    }
+}
+
+// ChatInput
+.ChatInput{
+    height: 10%;
+    width: 100%;
+    background-color: #f3f1ea;
+    padding: 1rem 1.5rem;
+    align-items: center;
+    justify-content: center;
+    textarea{
+        width: 90%;
+        height: 65px;
+        border-radius: 10px 0 0 10px ;
+        border: 1px solid $blue-color;
+        outline: none;
+        font-size: 1rem;
+        resize: none;
+        padding: 0.5rem 1rem;
+        &:focus{
+            border-width: 3px;
+        }
+        
+    }
+    div{
+        height: 65px;
+        width: 60px;
+        background-color: $blue-color;
+        border-radius: 0 10px 10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        &:hover{
+            background-color: $blue-dark-color;
+            transition: all 0.5s;
+        }
+        i{
+            color: $eggshell-color;
+            
+        }
+    }
+}
+
+// ListMessages
+.ListMessages{
+    height: 90%;
+    width: 100%;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    flex-direction: column-reverse;
+    overflow: auto;
+    scroll-behavior: smooth;
+    &::-webkit-scrollbar-track{
+	    -webkit-box-shadow: inset 0 0 6px $eggshell-color;
+	    box-shadow: inset 0 0 6px $eggshell-color;
+	    background-color: $eggshell-dark-color;
+    }
+
+    &::-webkit-scrollbar{
+        width: 8px;
+        background-color: $eggshell-dark-color;
+    }
+
+    &::-webkit-scrollbar-thumb{
+        background-color: $blue-color;
+        border-radius: 15px;
+    }
+
+    div{
+        width: 100%;
+       .message{
+            width: 45%;
+            // min-width: 5%;
+            padding: 0.5rem 1rem;
+            float: right;
+            margin-top: 0.8rem;
+            word-wrap: break-word;
+            font-size: 1rem;
+        
+        .user{
+            margin: 0.2rem 0;
+            font-size: 0.85rem;
+            font-weight: 900;
+        }
+        .timestamp{
+            text-align: right;
+            margin: 0.2rem 0;
+            font-size: 0.75rem;
+        }
+        }
+        .right{
+            background-color: $blue-dark-color;
+            .user{
+                color: rgb(77, 73, 73);
+            }
+        }
+        .left{
+            background-color: #fff;
+            color: $black-color;
+            .user{
+                color: rgb(105, 102, 102);
+            }
+        }
+    } 
+}
+
+// Home
+.Home{
+    .jumbotron{
+        height: 500px;
+        width: 100%;
+        background-color: #dad6c5;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: $black-color;
+        margin-top: 5rem;
+        border-radius: 15px;
+        div{
+            h1{
+                font-size: 2.5rem;
+                margin-bottom: 15px;
+            }
+            a{
+                text-decoration: none;
+                padding: 0.5rem 1rem;
+                background-color: $eggshell-color;
+                margin-left: 10px;
+                border-radius: 10px;
+                cursor: pointer;
+                color: $black-color;
+                &:hover{
+                    background-color: $eggshell-dark-color;
+                    transition: all 0.5s;
+                    }
+                }
+        }
+    }
+}
+
+// Footer
+.Footer{
+    width: 100%;
+    height: 40px;
+    background-color: $blue-color;
+    color: $eggshell-color;
+    align-items: center;
+    justify-content: flex-end;
+    position: absolute;
+    bottom: 0;
+}
+
+@media (max-width: 568px) {
+    .user-email{
+        display: none;
+    }
+}
