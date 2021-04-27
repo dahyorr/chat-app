@@ -24,7 +24,7 @@ const Message = ({message, userData}) =>{
 else return(
     <div >
             <div className='message left' style={{float: 'left', borderRadius: '0 15px 15px 0'}}>
-                <p className='user'>{message.displayName ? message.displayName : message.email} <span>{message.displayName?` (${message.email})`: null}</span></p>
+                <p className='user'>{message.displayName ? message.displayName : message.email} <span className= 'display-email'>{message.displayName?` (${message.email})`: null}</span></p>
                 <p className='message-content'>
                     {message.content}
                 </p>

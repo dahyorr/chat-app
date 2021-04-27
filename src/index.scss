@@ -196,6 +196,8 @@ body{
     flex-direction: column-reverse;
     overflow: auto;
     scroll-behavior: smooth;
+    background-image: url('./static/backg1.jpg') ;
+    background-repeat: repeat;
     &::-webkit-scrollbar-track{
 	    -webkit-box-shadow: inset 0 0 6px $eggshell-color;
 	    box-shadow: inset 0 0 6px $eggshell-color;
@@ -222,6 +224,8 @@ body{
             margin-top: 0.8rem;
             word-wrap: break-word;
             font-size: 1rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            // transition: all 0.3s cubic-bezier(.25,.8,.25,1);
         
         .user{
             margin: 0.2rem 0;
@@ -298,6 +302,11 @@ body{
 
 @media (max-width: 568px) {
     .user-email{
+        display: none;
+    }
+}
+@media (max-width: 700px) {
+    .display-email{
         display: none;
     }
 }
