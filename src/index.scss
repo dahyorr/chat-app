@@ -299,6 +299,25 @@ body{
     position: absolute;
     bottom: 0;
 }
+.Loader{
+    border: 10px solid $eggshell-color;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border-top: 13px solid $blue-color;
+    animation: spin 1s infinite;
+}
+.loader-background{
+    background-color: rgba(0,0,0,0.3);
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 
 @media (max-width: 568px) {
     .user-email{

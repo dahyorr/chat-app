@@ -272,6 +272,41 @@ body {
   bottom: 0;
 }
 
+.Loader {
+  border: 10px solid #F8F4E3;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border-top: 13px solid #23b5d3;
+  -webkit-animation: spin 1s infinite;
+          animation: spin 1s infinite;
+}
+
+.loader-background {
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 @media (max-width: 568px) {
   .user-email {
     display: none;

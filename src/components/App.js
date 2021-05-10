@@ -8,6 +8,7 @@ import Chat from '../views/Chat'
 import Signup from '../views/Signup'
 import Login from '../views/Login'
 import {checkLoginState, signIn, signOut} from '../actions/actions'
+import Loader from './Loader'
 
 class App extends React.Component{
 
@@ -19,7 +20,7 @@ class App extends React.Component{
       return (
     <div className="App">
             {this.props.loading ?
-             null:
+             <Loader/>:
              <BrowserRouter>
               <Nav/>
              <Switch>
